@@ -10,7 +10,7 @@ npm install @matterpool/bitcoinfiles-js
 
 ## Usage
 
-Uploading a and paying for a file
+Uploading and paying for a file
 
 ```javascript
 const bitcoinfiles = require('@matterpool/bitcoinfiles-js');
