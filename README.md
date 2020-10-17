@@ -58,10 +58,10 @@ Response
 
 ```javascript
 {
-	payment_address: '18Qi1rXJSLDLUYDZVkRT3ZdyB3E9eZamY2',
-	payment_satoshis: 2833,
-	session_tag: '<workspace-id>',
-	location: '<file-cdn-url>'
+    payment_address: '18Qi1rXJSLDLUYDZVkRT3ZdyB3E9eZamY2',
+    payment_satoshis: 2833,
+    session_tag: '<workspace-id>',
+    location: '<file-cdn-url>'
 }
 ```
 
@@ -85,24 +85,18 @@ Response
 
 ```javascript
 {
-	errors: [],
-	status: 200,
-	result: [
-		{
-			txid: 'f7a3e5838a134a78b6a5033aa928efb7849be6212307b9b9eed3c738ea470bc2',
-			session_tag: '<workspace-id>',
-			fileurl:
-				'https://bitcoinfilesmatter.s3.us-west-2.amazonaws.com/19206bd32b4eb3e618eae6601a04790a085dda2e.jpge2797900-1028-11eb-9858-8f7b63e05207.jpg',
-			payment_address: '18Qi1rXJSLDLUYDZVkRT3ZdyB3E9eZamY2',
-			payment_sats_needed: 2833,
-			filesize: 2775,
-			created_time: 1602905335,
-			blockhash: null,
-			filename: '19206bd32b4eb3e618eae6601a04790a085dda2e.jpg',
-			fee: null,
-			txoutproof: null
-		}
-	]
+    errors: [],
+    status: 200,
+    result: [{
+        txid: 'f7a3e5838a134a78b6a5033aa928efb7849be6212307b9b9eed3c738ea470bc2',
+        session_tag: '<workspace-id>',
+        fileurl: '<file-cdn-url>',
+        payment_address: '18Qi1rXJSLDLUYDZVkRT3ZdyB3E9eZamY2',
+        payment_sats_needed: 2833,
+        filesize: 2775,
+        created_time: 1602905335,
+        filename: '<filename>',
+    }]
 }
 ```
 
