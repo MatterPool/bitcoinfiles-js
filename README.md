@@ -27,12 +27,11 @@ const paymentSatoshis = upload.payment_satoshis;
 
 // use paymentAddress and paymentSatoshis to pay for the file
 // you can use any bitcoin wallet to pay for bitcoin files
-// once the transaction is created, send it to bitcoinfiles
 
 const rawtx = '....'
-
 const payment = await bitcoinfiles.pay(rawtx);
-const txid = payment.result[0].txid // the transaction id of the file
+// save the transaction id of the file to download it later
+const txid = payment.result[0].txid 
 ```
 
 Downloading a File
@@ -61,11 +60,8 @@ Response
 {
 	payment_address: '18Qi1rXJSLDLUYDZVkRT3ZdyB3E9eZamY2',
 	payment_satoshis: 2833,
-	status_url: '/status/28ebd7d8-4135-4f99-823c-dc21880cf2a3',
-	status_fqdn: 'https://api.bitcoinfiles.org/status/<workspace-id>',
 	session_tag: '<workspace-id>',
-	location:
-		'https://bitcoinfilesmatter.s3.us-west-2.amazonaws.com/19206bd32b4eb3e618eae6601a04790a085dda2e.jpge2797900-1028-11eb-9858-8f7b63e05207.jpg'
+	location: '<file-cdn-url>'
 }
 ```
 
