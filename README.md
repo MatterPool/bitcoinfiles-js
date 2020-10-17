@@ -1,6 +1,6 @@
 # BitcoinFiles JS
 
-Upload large files directly to Bitcoin. 
+Upload up to 218MB files directly to Bitcoin. 
 
 ## Installation
 
@@ -45,6 +45,8 @@ const file = await bitcoinfiles.download(txid);
 
 ### Upload
 
+To use BitcoinFiles, you first upload a file, then you pay for it to be settled on the bitcoin ledger.
+
 Request
 
 ```
@@ -68,7 +70,7 @@ Response
 
 ### Pay
 
-To pay for a file, pay `payment_address` the amount of `payment_satoshis`. You can pay for multiple files at once in the same transaction 
+To pay for a file, send `payment_satoshis` to `payment_address`. You can pay for multiple files at once in the same transaction and the response will return an array of the files you uploaded
 
 Request
 
