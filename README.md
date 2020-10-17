@@ -2,21 +2,24 @@
 
 Upload up to 218MB files directly to Bitcoin. 
 
+- [API Usage](https://github.com/MatterPool/bitcoinfiles-js/blob/main/README.md#api-usage)
+- [JS Usage](https://github.com/MatterPool/bitcoinfiles-js/blob/main/README.md#js-usage)
+
+# JS Usage
+
 ## Installation
 
 ```bash
 npm install @matterpool/bitcoinfiles-js
 ``````
 
-## JS Usage
-
-### Import
+## Import
 
 ```javascript
 const bitcoinfiles = require('@matterpool/bitcoinfiles-js');
 ```
 
-### Upload
+## Upload
 
 ```javascript
 const file = new File(['foo', 'bar'], 'foobar.txt');
@@ -25,7 +28,7 @@ formData.append('file', file);
 const upload = await bitcoinfiles.upload(formData, '<workspace-id>');
 ```
 
-### Pay
+## Pay
 
 ```javascript
 // use paymentAddress and paymentSatoshis to build a transaction
@@ -39,16 +42,16 @@ const payment = await bitcoinfiles.pay(rawtx);
 const txid = payment.result[0].txid // txid of the bitcoin file
 ```
 
-### Download
+## Download
 
 ```javascript
 const txid = '8f7090ec72a692e7bb893a3fd4ef1e508c655a284a5b736b3cc7c63649748562'
 const file = await bitcoinfiles.download(txid);
 ```
 
-## API Usage
+# API Usage
 
-### Upload
+## Upload
 
 To use BitcoinFiles, you first upload a file, then you pay for it to be settled on the bitcoin ledger.
 
@@ -73,7 +76,7 @@ Response
 ```
 
 
-### Pay
+## Pay
 
 To pay for a file, send `payment_satoshis` to `payment_address`. You can pay for multiple files at once in the same transaction and the response will return an array of the files you uploaded
 
