@@ -119,3 +119,8 @@ Request
 ```
 GET https://media.bitcoinfiles.org/[txid]
 ```
+
+
+# Authors
+
+- [@1](https://twetch.app/u/1)
