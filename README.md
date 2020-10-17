@@ -2,8 +2,8 @@
 
 Upload up to 218MB files to Bitcoin.
 
-- [HTTP API](https://github.com/MatterPool/bitcoinfiles-js/blob/main/README.md#api-usage)
 - [JS SDK](https://github.com/MatterPool/bitcoinfiles-js/blob/main/README.md#js-usage)
+- [HTTP API](https://github.com/MatterPool/bitcoinfiles-js/blob/main/README.md#api-usage)
 
 # JS Usage
 
