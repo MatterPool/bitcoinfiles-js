@@ -8,7 +8,7 @@ Upload large files directly to Bitcoin.
 npm install @matterpool/bitcoinfiles-js
 ``````
 
-## Usage
+## JS Usage
 
 Uploading and paying for a file
 
@@ -41,7 +41,7 @@ const txid = '8f7090ec72a692e7bb893a3fd4ef1e508c655a284a5b736b3cc7c63649748562'
 const file = await bitcoinfiles.download(txid);
 ```
 
-## API
+## API Usage
 
 ### Upload
 
