@@ -10,31 +10,36 @@ npm install @matterpool/bitcoinfiles-js
 
 ## JS Usage
 
-Uploading and paying for a file
+### Import
 
 ```javascript
 const bitcoinfiles = require('@matterpool/bitcoinfiles-js');
+```
 
-const workspaceId = '<insert-workspace-id>';
+### Upload
+
+```javascript
 const file = new File(['foo', 'bar'], 'foobar.txt');
 const formData = new FormData();
 formData.append('file', file);
+const upload = await bitcoinfiles.upload(formData, '<workspace-id>');
+```
 
-const upload = bitcoinfiles.upload(formData, workspaceId);
+### Pay
 
+```javascript
+// use paymentAddress and paymentSatoshis to build a transaction
 const paymentAddress = upload.payment_address;
 const paymentSatoshis = upload.payment_satoshis;
 
-// use paymentAddress and paymentSatoshis to pay for the file
-// you can use any bitcoin wallet to pay for bitcoin files
-
+// ...build transaction using paymenAddress and paymentSatoshis
 const rawtx = '....'
+
 const payment = await bitcoinfiles.pay(rawtx);
-// save the transaction id of the file to download it later
-const txid = payment.result[0].txid 
+const txid = payment.result[0].txid // txid of the bitcoin file
 ```
 
-Downloading a File
+### Download
 
 ```javascript
 const txid = '8f7090ec72a692e7bb893a3fd4ef1e508c655a284a5b736b3cc7c63649748562'
