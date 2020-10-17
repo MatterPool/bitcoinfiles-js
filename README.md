@@ -31,7 +31,6 @@ const upload = await bitcoinfiles.upload(formData, '<workspace-id>');
 ## Pay
 
 ```javascript
-// use paymentAddress and paymentSatoshis to build a transaction
 const paymentAddress = upload.payment_address;
 const paymentSatoshis = upload.payment_satoshis;
 
