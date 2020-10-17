@@ -57,7 +57,7 @@ To use BitcoinFiles, you first upload a file, then you pay for it to be settled 
 Request
 
 ```
-POST https://api.bitcoinfiles.org?tag=<workspace-id>
+POST https://api.bitcoinfiles.org/upload?tag=<workspace-id>
 Content-Type: multipart/form-data
 Body:
   file: <file-contents>
