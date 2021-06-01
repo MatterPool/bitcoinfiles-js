@@ -54,58 +54,48 @@ const file = await bitcoinfiles.download(txid);
 
 To use BitcoinFiles, you first upload a file, then you pay for it to be settled on the bitcoin ledger.
 
-Request
+#### Request
 
 ```
-POST https://api.bitcoinfiles.org/upload?tag=<workspace-id>
+POST https://doge.bitcoinfiles.org?workspace=<workspace-id>
 Content-Type: multipart/form-data
 Body:
   file: <file-contents>
 ```
 
-Response
+#### Response
 
 ```javascript
 {
     payment_address: '18Qi1rXJSLDLUYDZVkRT3ZdyB3E9eZamY2',
-    payment_satoshis: 2833,
-    session_tag: '<workspace-id>',
-    location: '<file-cdn-url>'
+    payment_sats_needed: 2833,
+    workspace_id: '<workspace-id>',
+    file_size: 1235,
+    file_content_type: 'image/jpeg',
 }
 ```
 
 
 ## Pay
 
-To pay for a file, send `payment_satoshis` to `payment_address`. You can pay for multiple files at once in the same transaction and the response will return an array of the files you uploaded
+To pay for a file, send `payment_address` to `payment_sats_needed`. You can pay for multiple files at once in the same transaction 
 
-Request
+#### Request
 
 ```
-POST https://api.bitcoinfiles.org/pay
-Content-Type: application/json
-Body:
-{
-  rawtx: '<raw-transaction-hex>'
-}
+POST https://doge.bitcoinfiles.org/pay
+Content-Type: application/octet-stream
+Body: <raw-transaction-hex>
 ```
 
-Response
+##### Response
 
+If paying for multiple files in one payment, the response txids will be in the same order as the payment outputs
 ```javascript
 {
     errors: [],
     status: 200,
-    result: [{
-        txid: 'f7a3e5838a134a78b6a5033aa928efb7849be6212307b9b9eed3c738ea470bc2',
-        session_tag: '<workspace-id>',
-        fileurl: '<file-cdn-url>',
-        payment_address: '18Qi1rXJSLDLUYDZVkRT3ZdyB3E9eZamY2',
-        payment_sats_needed: 2833,
-        filesize: 2775,
-        created_time: 1602905335,
-        filename: '<filename>',
-    }]
+    result: ['f7a3e5838a134a78b6a5033aa928efb7849be6212307b9b9eed3c738ea470bc2']
 }
 ```
 
@@ -113,10 +103,10 @@ Response
 
 You can download a file by using it's transaction id. This link can be used in html tags like `<img>`, `<video>` or `<audio>`
 
-Request
+#### Request
 
 ```
-GET https://media.bitcoinfiles.org/[txid]
+GET https://doge.bitcoinfiles.org/[txid]
 ```
 
 
